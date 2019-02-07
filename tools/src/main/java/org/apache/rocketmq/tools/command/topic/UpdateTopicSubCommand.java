@@ -67,15 +67,15 @@ public class UpdateTopicSubCommand implements SubCommand {
         opt.setRequired(false);
         options.addOption(opt);
 
-        opt = new Option("o", "order", true, "set topic's order(true|false");
+        opt = new Option("o", "order", true, "set topic's order(true|false)");
         opt.setRequired(false);
         options.addOption(opt);
 
-        opt = new Option("u", "unit", true, "is unit topic (true|false");
+        opt = new Option("u", "unit", true, "is unit topic (true|false)");
         opt.setRequired(false);
         options.addOption(opt);
 
-        opt = new Option("s", "hasUnitSub", true, "has unit sub (true|false");
+        opt = new Option("s", "hasUnitSub", true, "has unit sub (true|false)");
         opt.setRequired(false);
         options.addOption(opt);
 
@@ -138,7 +138,7 @@ public class UpdateTopicSubCommand implements SubCommand {
                     String brokerName = CommandUtil.fetchBrokerNameByAddr(defaultMQAdminExt, addr);
                     String orderConf = brokerName + ":" + topicConfig.getWriteQueueNums();
                     defaultMQAdminExt.createOrUpdateOrderConf(topicConfig.getTopicName(), orderConf, false);
-                    System.out.printf(String.format("set broker orderConf. isOrder=%s, orderConf=[%s]",
+                    System.out.printf("%s", String.format("set broker orderConf. isOrder=%s, orderConf=[%s]",
                         isOrder, orderConf.toString()));
                 }
                 System.out.printf("create topic to %s success.%n", addr);
